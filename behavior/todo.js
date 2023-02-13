@@ -19,13 +19,21 @@ var todo = {
         debugger;
     },
 
+    onCheck:function(){
+
+    },
+
     _addItem:function(){
         var lista = document.getElementById("todo_list");
         var item = document.createElement("li");
         var input = document.createElement("input");
+        var check = document.createElement("input");
+        check.setAttribute("type", "checkbox");
         input.addEventListener("change", todo.onChange);
         item.appendChild(input);
+        item.appendChild(check);
         lista.appendChild(item);
+        input.focus();
     },
 
     _removeEmptyItems:function(item){
