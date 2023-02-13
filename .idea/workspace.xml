@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8136bfd-8e28-432f-b7c9-a99395d888ec" name="Changes" comment="Revamped the css and added a check to finish tasks">
+    <list default="true" id="f8136bfd-8e28-432f-b7c9-a99395d888ec" name="Changes" comment="Added local storage for tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/behavior/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/behavior/todo.js" afterDir="false" />
     </list>
@@ -91,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676324336741</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added local storage for tasks">
+      <created>1676325938569</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676325938569</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,7 +118,8 @@
     <MESSAGE value="Todo list behavior first implementation" />
     <MESSAGE value="added CSS to the main structure and TodoList" />
     <MESSAGE value="Revamped the css and added a check to finish tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revamped the css and added a check to finish tasks" />
+    <MESSAGE value="Added local storage for tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added local storage for tasks" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

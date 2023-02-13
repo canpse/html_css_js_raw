@@ -6,7 +6,7 @@ var todo = {
     onLoad:function(){
         var list = document.getElementById("todo_list");
         todo._loadFromStorage();
-        if(list.childNodes.length < 1){
+        if(list.childNodes.length < 1 || list.lastChild.lastChild.value != ""){
             todo._addEmptyItem();
         }
     },
@@ -53,6 +53,7 @@ var todo = {
 
     _removeEmptyItems:function(item){
         if(item.lastChild.value == ""){
+            todo._removeFromStorage.call(item);
             item.remove();
         }
     },
@@ -66,5 +67,12 @@ var todo = {
             item.firstChild.value = todo.todoList[i].done;
         }
     },
+
+    _removeFromStorage:function(){
+        var item = this;
+        var index = Array.prototype.indexOf.call(item.parentElement.children, item);
+        todo.todoList.splice(index, 1);
+        localStorage.setItem('todoList', JSON.stringify(todo.todoList));
+    }
 
 }
