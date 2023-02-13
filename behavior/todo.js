@@ -1,22 +1,23 @@
 var todo = {
     // functions preceded with _ are to be treated as private
 
-    valores: [],
+    todoList: JSON.parse(localStorage.getItem('todoList')) || [],
 
     onLoad:function(){
-        var lista = document.getElementById("todo_list");
-        if(lista.childNodes.length < 1){
-            todo._addItem();
+        var list = document.getElementById("todo_list");
+        todo._loadFromStorage();
+        if(list.childNodes.length < 1){
+            todo._addEmptyItem();
         }
     },
 
     onChange:function(){
-        var lista = document.getElementById("todo_list");
-        lista.childNodes.forEach(todo._removeEmptyItems);
-        if(lista.lastChild.lastChild.value != ""){
-            todo._addItem();
+        var list = document.getElementById("todo_list");
+        list.childNodes.forEach(todo._removeEmptyItems);
+        if(list.lastChild.lastChild.value != ""){
+            todo._addTodoToLocalStorage.call(this);
+            todo._addEmptyItem();
         }
-        debugger;
     },
 
     onCheck:function(){
@@ -26,10 +27,11 @@ var todo = {
         } else {
             this.parentElement.lastChild.disabled = false;
         }
+        todo._addTodoToLocalStorage.call(this);
     },
 
-    _addItem:function(){
-        var lista = document.getElementById("todo_list");
+    _addEmptyItem:function(){
+        var list = document.getElementById("todo_list");
         var item = document.createElement("li");
         var check = document.createElement("input");
         var input = document.createElement("input");
@@ -38,14 +40,31 @@ var todo = {
         check.addEventListener("select", todo.onCheck);
         item.appendChild(check);
         item.appendChild(input);
-        lista.appendChild(item);
+        list.appendChild(item);
         input.focus();
+        return item;
+    },
+
+    _addTodoToLocalStorage:function(){
+        var item = this.parentElement;
+        todo.todoList.push({"done":item.firstChild.value, "task":item.lastChild.value});
+        localStorage.setItem('todoList', JSON.stringify(todo.todoList));
     },
 
     _removeEmptyItems:function(item){
         if(item.lastChild.value == ""){
             item.remove();
         }
-    }
+    },
+
+    _loadFromStorage:function(){
+        var list = document.getElementById('todo_list');
+        list.innerHTML = '';
+        for (var i = 0; i < todo.todoList.length; i++) {
+            var item = todo._addEmptyItem();
+            item.lastChild.value = todo.todoList[i].task;
+            item.firstChild.value = todo.todoList[i].done;
+        }
+    },
 
 }
