@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8136bfd-8e28-432f-b7c9-a99395d888ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HTML File.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/calculator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/jokenpo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/random_quote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/todo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/behavior/weather_app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html_css_js_raw.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/calculator.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/jokenpo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/random_quote.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/todo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/weather_app.css" afterDir="false" />
+    <list default="true" id="f8136bfd-8e28-432f-b7c9-a99395d888ec" name="Changes" comment="Start of project">
+      <change beforePath="$PROJECT_DIR$/HTML File.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML File.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +45,18 @@
       <option name="presentableId" value="Default" />
       <updated>1676314073957</updated>
     </task>
+    <task id="LOCAL-00001" summary="Start of project">
+      <created>1676315527630</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676315527630</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start of project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of project" />
   </component>
 </project>
