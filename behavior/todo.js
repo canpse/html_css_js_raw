@@ -5,6 +5,10 @@ todo.taskList = [];
 todo.onLoad = function() {
 };
 
+todo.onClickAddTask = function() {
+    todo._addTask();
+};
+
 todo.editTask = function () {
     
 };
@@ -13,14 +17,15 @@ todo.removeTask = function () {
 
 };
 
-todo.addTask = function () {
+todo._addTask = function () {
     var newTask = todo._getNewEmptyTask();
     var tasklist = document.getElementById("task_list");
-    var newTaskDescription = document.getElementById("new_task_description").value;
+    var newTaskDescription = document.getElementById("new_task_description");
 
-    newTask.lastChild.value = newTaskDescription;
+    newTask.lastChild.value = newTaskDescription.value;
     tasklist.appendChild(newTask);
-    
+    newTaskDescription.value = "";
+    newTaskDescription.focus();
     return newTask;
 };
 
