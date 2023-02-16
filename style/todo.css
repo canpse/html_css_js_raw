@@ -1,46 +1,67 @@
-#todo_list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+.todo_list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#todo_list li {
-  background-color: #f2f2f2;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 30%;
-  text-align: left;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.todo_list li {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 30%;
+    text-align: left;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#todo_list input[type="checkbox"] {
-  margin-right: 10px;
+.todo_list input[type="checkbox"] {
+    margin-right: 10px;
 }
 
-#todo_list input[type="checkbox"]:checked + input {
-  text-decoration: line-through;
-  color: #999;
-  opacity: 0.5;
+.todo_list input[type="checkbox"]:checked + input {
+    text-decoration: line-through;
+    color: #999;
+    opacity: 0.5;
 }
 
-#todo_list input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+.todo_list input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-#todo_list input[type="text"]:focus {
-  outline: none;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+.todo_list input[type="text"]:focus {
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
+
+.todo_list button[type="button"] {
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.todo_list button:hover {
+    cursor: pointer;
+    background-color: buttonshadow;
+}
+
+.todo_list button:active {
+    background-color: buttonface;
+    transform: translateY(2px);
+}
+
 
