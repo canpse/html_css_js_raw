@@ -5,6 +5,23 @@ todo.taskList = [];
 todo.onLoad = function () {
 };
 
+todo.onChangeTask = function () {
+    let descriptionField = event.currentTarget;
+    let task = descriptionField.parentElement;
+    if (descriptionField.value === "") {
+        todo._removeTask.call(task);
+    }
+};
+
+
+todo._removeTask = function () {
+    var task = this;
+    var todoList = task.parentElement.children;
+    var taskIndex = Array.prototype.indexOf.call(todoList, task);
+    todoList[taskIndex].remove();
+    
+};
+
 todo.onClickAddTask = function () {
     let newTaskDescriptionNotEmpty = document.getElementById("new_task_description").value !== "";
     if (newTaskDescriptionNotEmpty) {
@@ -23,16 +40,12 @@ todo.editTask = function () {
 
 };
 
-todo.removeTask = function () {
-
-};
-
 todo._addTask = function () {
     var newTask = todo._getNewEmptyTask();
     var tasklist = document.getElementById("task_list");
     var newTaskDescription = document.getElementById("new_task_description");
-
     newTask.lastChild.value = newTaskDescription.value;
+
     tasklist.appendChild(newTask);
     newTaskDescription.value = "";
     newTaskDescription.focus();
@@ -40,15 +53,16 @@ todo._addTask = function () {
 };
 
 todo._getNewEmptyTask = function () {
-    var item = document.createElement("li");
+    var task = document.createElement("li");
     var descriptionTextInput = document.createElement("input");
     var doneInputCheck = document.createElement("input");
 
     doneInputCheck.setAttribute("type", "checkbox");
     descriptionTextInput.setAttribute("type", "text");
+    descriptionTextInput.setAttribute("onChange", "todo.onChangeTask()");
 
-    item.appendChild(doneInputCheck);
-    item.appendChild(descriptionTextInput);
+    task.appendChild(doneInputCheck);
+    task.appendChild(descriptionTextInput);
 
-    return item;
+    return task;
 };
