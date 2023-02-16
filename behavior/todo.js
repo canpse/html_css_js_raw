@@ -2,15 +2,21 @@ var todo = {};
 
 todo.taskList = [];
 
-todo.onLoad = function() {
+todo.onLoad = function () {
 };
 
-todo.onClickAddTask = function() {
+todo.onClickAddTask = function () {
     todo._addTask();
 };
 
+todo.onKeyUpTaskDescription = function () {
+    if (event.key === "Enter") {
+        todo._addTask();
+    }
+};
+
 todo.editTask = function () {
-    
+
 };
 
 todo.removeTask = function () {
