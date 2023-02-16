@@ -6,11 +6,15 @@ todo.onLoad = function () {
 };
 
 todo.onClickAddTask = function () {
-    todo._addTask();
+    let newTaskDescriptionNotEmpty = document.getElementById("new_task_description").value !== "";
+    if (newTaskDescriptionNotEmpty) {
+        todo._addTask();
+    }
 };
 
 todo.onKeyUpTaskDescription = function () {
-    if (event.key === "Enter") {
+    let fieldNotEmpty = event.currentTarget.value !== "";
+    if (event.key === "Enter" && fieldNotEmpty) {
         todo._addTask();
     }
 };
