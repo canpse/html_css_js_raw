@@ -1,4 +1,4 @@
-var todo = {};
+const todo = {};
 
 todo.taskList = [];
 
@@ -13,11 +13,16 @@ todo.onChangeTask = function () {
     }
 };
 
+todo.onClickRemoveTask = function(){
+    let task = event.currentTarget.parentElement;
+    todo._removeTask.call(task);
+};
+
 
 todo._removeTask = function () {
-    var task = this;
-    var todoList = task.parentElement.children;
-    var taskIndex = Array.prototype.indexOf.call(todoList, task);
+    let task = this;
+    let todoList = task.parentElement.children;
+    let taskIndex = Array.prototype.indexOf.call(todoList, task);
     todoList[taskIndex].remove();
     
 };
@@ -41,10 +46,10 @@ todo.editTask = function () {
 };
 
 todo._addTask = function () {
-    var newTask = todo._getNewEmptyTask();
-    var tasklist = document.getElementById("task_list");
-    var newTaskDescription = document.getElementById("new_task_description");
-    newTask.lastChild.value = newTaskDescription.value;
+    let newTask = todo._getNewEmptyTask();
+    let tasklist = document.getElementById("task_list");
+    let newTaskDescription = document.getElementById("new_task_description");
+    newTask.children[1].value = newTaskDescription.value;
 
     tasklist.appendChild(newTask);
     newTaskDescription.value = "";
@@ -53,16 +58,21 @@ todo._addTask = function () {
 };
 
 todo._getNewEmptyTask = function () {
-    var task = document.createElement("li");
-    var descriptionTextInput = document.createElement("input");
-    var doneInputCheck = document.createElement("input");
+    let task = document.createElement("li");
+    let descriptionTextInput = document.createElement("input");
+    let doneInputCheck = document.createElement("input");
+    let removeTaskButton = document.createElement("button");
 
     doneInputCheck.setAttribute("type", "checkbox");
     descriptionTextInput.setAttribute("type", "text");
     descriptionTextInput.setAttribute("onChange", "todo.onChangeTask()");
-
+    removeTaskButton.setAttribute("type", "button");
+    removeTaskButton.setAttribute("onClick", "todo.onClickRemoveTask()");
+    removeTaskButton.innerHTML = "-";
+    
     task.appendChild(doneInputCheck);
     task.appendChild(descriptionTextInput);
+    task.appendChild(removeTaskButton);
 
     return task;
 };
